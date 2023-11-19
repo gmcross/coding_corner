@@ -4,6 +4,7 @@
 #include <memory>
 
 #include "sdl_interface/renderer.h"
+#include "sdl_interface/widget_manager.h"
 
 namespace sdl_interface
 {
@@ -14,7 +15,7 @@ namespace sdl_interface
         ~Window();
 
         void clear();
-        void update();
+        void update(const std::shared_ptr<WidgetManager>& widget_manager);
 
         SDL_Window* getWindow() const { return window_; }
         std::shared_ptr<Renderer> getRenderer() const { return renderer_; }

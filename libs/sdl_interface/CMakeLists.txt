@@ -5,6 +5,7 @@ Find_Package(SDL2 REQUIRED)
 
 set(SOURCES
     src/rectangle.cpp
+    src/renderer.cpp
     src/window.cpp
 )
 
@@ -15,12 +16,10 @@ target_include_directories(${library_name}
     PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>
         $<INSTALL_INTERFACE:include>
-        #${SDL2_INCLUDE_DIRS}
 )
 
 target_link_libraries(${library_name}
     PUBLIC
-        #${SDL2_LIBRARIES}
         SDL2::SDL2
         SDL2::SDL2main
 )
