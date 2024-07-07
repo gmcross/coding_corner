@@ -1,6 +1,7 @@
 #include <sdl_interface/rectangle.h>
 #include <sdl_interface/widget_manager.h>
 #include <sdl_interface/window.h>
+
 #include <iostream>
 
 int main() {
@@ -21,12 +22,6 @@ int main() {
       } else if (event.type == SDL_MOUSEMOTION) {
         widget_manager->onMouseMotion(event.motion.x, event.motion.y);
       }
-      // else if (event.type == SDL_MOUSEBUTTONDOWN) {
-      //   widget_manager->onMouseButtonDown(event.button.x, event.button.y);
-      // }
-      // else if (event.type == SDL_MOUSEBUTTONUP) {
-      //   widget_manager->onMouseButtonUp(event.button.x, event.button.y);
-      // }
       window.update(widget_manager);
     }
   }
