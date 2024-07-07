@@ -27,3 +27,16 @@ TEST(RectangleTest, GivenRectangle_WhenDrawing_ThenDrawIsCalled) {
   // Act
   rectangle.update(mockRenderer);
 }
+
+TEST(RectangleTest, GivenRectangle_Contains_WhenPointInside) {
+  sdl_interface::Rectangle rectangle(0, 0, 10, 10);
+
+  // Point inside the rectangle
+  EXPECT_TRUE(rectangle.contains(5, 5));
+
+  // Point outside the rectangle
+  EXPECT_FALSE(rectangle.contains(5, 11));
+  EXPECT_FALSE(rectangle.contains(11, 5));
+  EXPECT_FALSE(rectangle.contains(-1, 5));
+  EXPECT_FALSE(rectangle.contains(5, -1));
+}

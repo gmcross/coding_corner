@@ -22,6 +22,7 @@ void Rectangle::update(RendererBase &renderer) {
   std::cout << "Rectangle::update" << std::endl;
   renderer.renderWidget(*this);
 }
+
 void Rectangle::draw(SDL_Renderer *renderer) const {
   std::cout << "Rectangle::draw" << std::endl;
   SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
