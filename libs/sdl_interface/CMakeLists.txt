@@ -43,3 +43,8 @@ install(EXPORT ${PROJECT_NAME}Targets
     NAMESPACE ${PROJECT_NAME}::
     DESTINATION lib/cmake/${PROJECT_NAME}
 )
+
+
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
