@@ -1,6 +1,7 @@
 #include <sdl_interface/rectangle.h>
 #include <sdl_interface/widget_manager.h>
 #include <sdl_interface/window.h>
+#include <iostream>
 
 int main() {
   sdl_interface::Window window("Simple SDL UI", 800, 600);
@@ -14,10 +15,10 @@ int main() {
 
     SDL_Event event;
     if (SDL_PollEvent(&event)) {
+      std::cout << "Event type: " << event.type << std::endl;
       if (event.type == SDL_QUIT) {
         break;
-      }
-      else if (event.type == SDL_MOUSEMOTION) {
+      } else if (event.type == SDL_MOUSEMOTION) {
         widget_manager->onMouseMotion(event.motion.x, event.motion.y);
       }
       // else if (event.type == SDL_MOUSEBUTTONDOWN) {
@@ -26,9 +27,8 @@ int main() {
       // else if (event.type == SDL_MOUSEBUTTONUP) {
       //   widget_manager->onMouseButtonUp(event.button.x, event.button.y);
       // }
+      window.update(widget_manager);
     }
-
-    window.update(widget_manager);
   }
 
   return 0;

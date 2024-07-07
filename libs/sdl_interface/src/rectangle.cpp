@@ -18,7 +18,7 @@ void Rectangle::setPosition(const int x, const int y) {
   rect_.y = y;
 }
 
-void Rectangle::update(RendererBase& renderer) {
+void Rectangle::update(RendererBase &renderer) {
   std::cout << "Rectangle::update" << std::endl;
   renderer.renderWidget(*this);
 }
@@ -28,10 +28,15 @@ void Rectangle::draw(SDL_Renderer *renderer) const {
   SDL_RenderDrawRect(renderer, &rect_);
 }
 
-void Rectangle::onMouseMotion(int x, int y) {
-  if (x > rect_.x && x < rect_.x + rect_.w && y > rect_.y && y < rect_.y + rect_.h) {
-    std::cout << "Rectangle::onMouseMotion" << std::endl;
+bool Rectangle::contains(const int x, const int y) const {
+  const auto topRightX = rect_.x + rect_.w;
+  const auto topRightY = rect_.y + rect_.h;
+
+  if (x >= rect_.x && x <= topRightX && y >= rect_.y && y <= topRightY) {
+    std::cout << "Rectangle contains point (" << x << ", " << y << ")" << std::endl;
+    return true;
   }
+  return false;
 }
 
 }  // namespace sdl_interface

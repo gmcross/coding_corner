@@ -15,7 +15,7 @@ public:
   void update(RendererBase& renderer) override;
   void draw(SDL_Renderer *renderer) const override;
 
-  void onMouseMotion(int x, int y) override;
+  bool contains(const int x, const int y) const override;
 
 private:
   SDL_Rect rect_;

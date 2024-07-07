@@ -13,6 +13,6 @@ public:
 
   virtual void draw( SDL_Renderer * renderer) const = 0;
 
-  virtual void onMouseMotion(int x, int y) = 0;
+  virtual bool contains(const int x, const int y) const = 0;
 };
 }  // namespace sdl_interface

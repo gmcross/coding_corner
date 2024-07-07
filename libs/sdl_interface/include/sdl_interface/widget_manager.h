@@ -16,7 +16,7 @@ public:
 
   void onMouseMotion(int x, int y) {
     for (auto &widget : widgets_) {
-      widget->onMouseMotion(x, y);
+      widget->contains(x, y);
     }
   }
 

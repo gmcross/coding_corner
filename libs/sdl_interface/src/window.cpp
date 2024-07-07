@@ -12,12 +12,7 @@ Window::~Window() {
   SDL_DestroyWindow(window_);
 }
 
-void Window::clear() { 
-  renderer_->clear(); }
+void Window::clear() { renderer_->clear(); }
 
-void Window::update( const std::shared_ptr<WidgetManager>& widget_manager  ) { 
-  widget_manager->update(renderer_);  
-  renderer_->update();
-
-}
+void Window::update(const std::shared_ptr<WidgetManager> &widget_manager) { widget_manager->update(renderer_); }
 }  // namespace sdl_interface

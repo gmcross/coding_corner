@@ -1,6 +1,7 @@
 set(TEST_MAIN ${library_name}_tests)
 set(TEST_SOURCES
   renderer_tests.cc
+  rectangle_tests.cc
 )
 
 add_executable(${TEST_MAIN} ${TEST_SOURCES})
