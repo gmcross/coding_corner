@@ -14,6 +14,12 @@ public:
     }
   }
 
+  void onMouseMotion(int x, int y) {
+    for (auto &widget : widgets_) {
+      widget->onMouseMotion(x, y);
+    }
+  }
+
 private:
   std::vector<std::shared_ptr<Widget>> widgets_;
 };

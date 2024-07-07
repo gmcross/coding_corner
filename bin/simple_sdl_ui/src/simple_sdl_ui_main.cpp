@@ -17,6 +17,15 @@ int main() {
       if (event.type == SDL_QUIT) {
         break;
       }
+      else if (event.type == SDL_MOUSEMOTION) {
+        widget_manager->onMouseMotion(event.motion.x, event.motion.y);
+      }
+      // else if (event.type == SDL_MOUSEBUTTONDOWN) {
+      //   widget_manager->onMouseButtonDown(event.button.x, event.button.y);
+      // }
+      // else if (event.type == SDL_MOUSEBUTTONUP) {
+      //   widget_manager->onMouseButtonUp(event.button.x, event.button.y);
+      // }
     }
 
     window.update(widget_manager);

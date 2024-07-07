@@ -28,4 +28,10 @@ void Rectangle::draw(SDL_Renderer *renderer) const {
   SDL_RenderDrawRect(renderer, &rect_);
 }
 
+void Rectangle::onMouseMotion(int x, int y) {
+  if (x > rect_.x && x < rect_.x + rect_.w && y > rect_.y && y < rect_.y + rect_.h) {
+    std::cout << "Rectangle::onMouseMotion" << std::endl;
+  }
+}
+
 }  // namespace sdl_interface
