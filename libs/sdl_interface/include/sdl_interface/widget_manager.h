@@ -10,7 +10,7 @@ public:
 
   void update(const std::shared_ptr<RendererBase> &renderer) {
     for (auto &widget : widgets_) {
-      widget->update(renderer);
+      widget->update(*renderer);
     }
   }
 

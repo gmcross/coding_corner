@@ -18,9 +18,9 @@ void Rectangle::setPosition(const int x, const int y) {
   rect_.y = y;
 }
 
-void Rectangle::update(const std::shared_ptr<RendererBase> &renderer) {
+void Rectangle::update(RendererBase& renderer) {
   std::cout << "Rectangle::update" << std::endl;
-  renderer->renderWidget(*this);
+  renderer.renderWidget(*this);
 }
 void Rectangle::draw(SDL_Renderer *renderer) const {
   std::cout << "Rectangle::draw" << std::endl;

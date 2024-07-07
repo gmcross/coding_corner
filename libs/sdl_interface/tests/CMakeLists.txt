@@ -6,7 +6,11 @@ set(TEST_SOURCES
 add_executable(${TEST_MAIN} ${TEST_SOURCES})
 target_link_libraries(${TEST_MAIN}
 PRIVATE
-  GTest::gtest GTest::gtest_main
+  GTest::gtest
+  GTest::gtest_main
+  GTest::gmock
+  GTest::gmock_main
+  ${library_name}
 )
 
 include(GoogleTest)
