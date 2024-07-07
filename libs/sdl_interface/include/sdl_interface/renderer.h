@@ -1,3 +1,9 @@
+/**
+ * @file renderer.h
+ * @brief This file provides the interface for the SDL Renderer, with a base class and a derived class
+ * @date 07/06/2024
+ */
+
 #pragma once
 #include <SDL2/SDL.h>
 
