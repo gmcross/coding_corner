@@ -9,8 +9,6 @@ Rectangle::Rectangle(const int x, const int y, const int width, const int height
   rect_.h = height;
 }
 
-Rectangle::~Rectangle() {}
-
 void Rectangle::setPosition(const int x, const int y) {
   rect_.x = x;
   rect_.y = y;
